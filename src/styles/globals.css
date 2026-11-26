@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-obsidian: #101010;
+    --color-graphite: #242424;
+    --color-champagne: #C6A878;
+    --color-ivory: #EEE8DD;
+    --color-walnut: #67452F;
+    --color-stone: #96918A;
+    --color-white: #FFFFFF;
+  }
+
+  body {
+    background-color: var(--color-obsidian);
+    color: var(--color-ivory);
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-feature-settings: 'lnum' 1;
+  }
+}
+
+/* Custom Architectural Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #101010;
+}
+::-webkit-scrollbar-thumb {
+  background: #2E2E2E;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C6A878;
+}
+
+/* Fluid Typography Classes */
+.text-fluid-hero {
+  font-size: clamp(48px, 9vw, 136px);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+.text-fluid-section {
+  font-size: clamp(36px, 6vw, 88px);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+}
+
+.text-fluid-product {
+  font-size: clamp(38px, 6.5vw, 96px);
+  line-height: 1.0;
+}
+
+.eyebrow {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: #C6A878;
+  font-weight: 500;
+}
+
+/* Glassmorphism Surface */
+.glass-obsidian {
+  background: rgba(16, 16, 16, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-graphite {
+  background: rgba(36, 36, 36, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(198, 168, 120, 0.15);
+}
+
+/* Print Styles for Spec Sheet */
+@media print {
+  body {
+    background: #FFFFFF !important;
+    color: #101010 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}
